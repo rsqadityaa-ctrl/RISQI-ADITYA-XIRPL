@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fotofolio 3D - Risqi Aditya</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="merek">
+      <div class="logo">A</div>
+      <div><strong>RISQI ADITYA</strong><br><small style="color:var(--muted)"></small></div>
+    </div>
+    <div class="menu" id="navMenu">
+      <a href="#beranda">Beranda</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#keahlian">Keahlian</a>
+      <a href="#blog">Blog</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#kontak" class="cta">Hubungi</a>
+    </div>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="header" id="beranda">
+  <div class="hero-card">
+    <div class="hero-title">Selamat datang di web Fotofolio saya</div>
+    <div class="hero-sub">Halo! Saya <strong>Risqi Aditya</strong>. Menampilkan profil saya selama belajar di SMKN.</div>
+    <div class="hero-actions">
+      <a href="#kontak" class="cta-outline">Unduh CV</a>
+    </div>
+    <div class="social-media">
+      <a href="https://www.instagram.com/30adityaa" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+      <a href="https://www.tiktok.com/@risqi_aditya1" target="_blank" class="social-icon tiktok"><i class="fab fa-tiktok"></i><span>TikTok</span></a>
+      <a href="https://youtu.be/xhXBbgqnfWI?si=UNjqZQNxAInJ28Ug" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i><span>YouTube</span></a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="book-wrap">
+      <div class="book"><img src="adityaa.jpeg" alt="Sampul Fotofolio 3D"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TENTANG -->
+<section class="section" id="tentang">
+  <div class="card">
+    <h2>Tentang Saya</h2>
+    <p>Saya RISQI ADITYA kelas XI RPL, pelajar SMKN Pasirian jurusan RPL, tertarik dunia IoT, pemrograman, dan membuat prototipe perangkat pintar.</p>
+  </div>
+</section>
+
+<!-- KEAHLIAN -->
+<section class="section" id="keahlian">
+  <h2>Keahlian</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>💻 HTML</h3>
+      <div class="progress-wrap"><div class="progress-bar" data-value="95%"></div></div>
+      <p>Struktur dasar web, memberikan makna dan kerangka konten yang dibaca browser.</p>
+    </div>
+    <div class="card">
+      <h3>🎨 CSS</h3>
+      <div class="progress-wrap"><div class="progress-bar" data-value="88%"></div></div>
+      <p>Mengatur tampilan web: warna, font, layout, animasi.</p>
+    </div>
+    <div class="card">
+      <h3>🖥️ PHP</h3>
+      <div class="progress-wrap"><div class="progress-bar" data-value="88%"></div></div>
+      <p>Bahasa pemrograman sisi server, mengembalikan HTML/JSON ke browser.</p>
+    </div>
+    <div class="card">
+      <h3>⚡ JavaScript</h3>
+      <div class="progress-wrap"><div class="progress-bar" data-value="76%"></div></div>
+      <p>Menambah interaksi halaman web, dijalankan di browser maupun server (Node.js).</p>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="section" id="blog">
+  <h2>Blog — Prototipe Smart Home</h2>
+  <div class="grid">
+    <div class="card"><h3>📡 Apa itu Smart Home?</h3><p>Sistem rumah pintar yang dikontrol otomatis.</p></div>
+    <div class="card"><h3>🛠️ Alat & Bahan</h3><p>NodeMCU, Relay, Sensor gerak, LED</p></div>
+    <div class="card"><h3>⚡ Langkah Pembuatan</h3><p>Rakit → Upload kode → Sambungkan IoT → Test</p></div>
+    <div class="card"><h3>✔️ Hasil</h3><p>Perangkat dapat dikontrol melalui smartphone 📱</p></div>
+  </div>
+</section>
+
+<!-- GALERI -->
+<section class="section" id="galeri">
+  <h2>Galeri</h2>
+  <div class="grid-gallery">
+    <img src="robot.jpeg" alt="">
+    <img src="projekLCD.jpeg" alt="">
+    <img src="relay.jpeg" alt="">
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section class="section" id="kontak">
+  <div class="contact-grid">
+    <div class="card">
+      <h3>Hubungi Saya</h3>
+      <form id="contactForm">
+        <input name="name" placeholder="Nama" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <textarea name="message" rows="4" placeholder="Pesan" required></textarea>
+        <button type="submit">Kirim Pesan</button>
+      </form>
+    </div>
+    <div class="card map-card">
+      <iframe src="https://www.google.com/maps/embed?pb=!4v1765335489699!6m8!1m7!1sDRou1rBzuSnhKFKDTEkOWQ!2m2!1d-8.165193194738107!2d113.0977827229964!3f33.1758522951185!4f-14.088901977129069!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></https:>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  © <span id="year"></span> RISQI ADITYA • Hak cipta dilindungi undang-undang
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox"><img id="lightboxImg" alt="Pratinjau"></div>
+
+</body>
+</html>

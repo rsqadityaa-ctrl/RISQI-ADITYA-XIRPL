@@ -1,0 +1,406 @@
+/* =====================================
+   Root & Global
+===================================== */
+:root{
+  --maxW:1100px;
+  --bg:#0f0f0f;
+  --card:#1a1a1a;
+  --muted:#b0b0b0;
+  --accent:#22c55e;
+  --glass: rgba(255,255,255,0.05);
+  --glass2: rgba(255,255,255,0.025);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:var(--bg);
+  color:#e6eef6;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  padding-bottom:80px;
+  perspective:1200px;
+}
+
+/* =====================================
+   NAVBAR
+===================================== */
+nav{
+  position:sticky;
+  top:0;
+  z-index:200;
+  max-width:var(--maxW);
+  margin:0 auto;
+  padding:8px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));
+  backdrop-filter:blur(10px);
+  border-radius:0 0 14px 14px;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+.nav-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.merek{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo{
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  background:linear-gradient(135deg,#111827,#0b1220);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  color:var(--accent);
+}
+
+.menu{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.menu a{
+  padding:6px 10px;
+  text-decoration:none;
+  border-radius:8px;
+  color:var(--muted);
+  font-weight:600;
+  transition:.2s;
+}
+
+.menu a:hover{
+  background:var(--glass);
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+.cta{
+  padding:6px 10px;
+  border-radius:8px;
+  font-weight:700;
+  background:linear-gradient(90deg,var(--accent),#16a34a);
+  color:#062018;
+}
+
+.cta-outline{
+  padding:6px 10px;
+  border-radius:8px;
+  font-weight:700;
+  border:1px solid rgba(255,255,255,0.08);
+  color:var(--muted);
+}
+
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+  color:var(--muted);
+}
+
+/* =====================================
+   MOBILE MENU (SAMA WARNA DENGAN NAVBAR)
+===================================== */
+
+@media(max-width:768px){
+  .menu{
+    display:none;
+    position:absolute;
+    right:10px;
+    top:60px;
+    padding:16px;
+    width:200px;
+    flex-direction:column;
+    gap:4px;
+    border-radius:16px;
+
+    /* WARNA SAMA DENGAN NAVBAR */
+    background:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02));
+    border:1px solid rgba(255,255,255,0.06);
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 12px 50px rgba(0,0,0,0.4);
+    animation:fadeIn .25s ease;
+    z-index:300;
+  }
+
+  .menu a{
+    padding:12px;
+    font-size:15px;
+    color:#e6eef6;
+    border-radius:10px;
+  }
+
+  .menu a:hover{
+    background:var(--glass);
+    color:#fff;
+    transform:none;
+  }
+
+  .menu.show{
+    display:flex;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+}
+
+/* =====================================
+   HERO SECTION
+===================================== */
+.header{
+  max-width:var(--maxW);
+  margin:30px auto;
+  padding:28px;
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:28px;
+  align-items:center;
+}
+
+.hero-card{
+  background:var(--glass);
+  border-radius:22px;
+  padding:24px;
+  position:relative;
+  z-index:10;
+  box-shadow:0 30px 80px rgba(2,6,23,0.6);
+}
+
+.hero-title{
+  font-size:28px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.hero-sub{
+  color:var(--muted);
+  margin-bottom:18px;
+}
+
+.hero-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* ========== Media Sosial ========== */
+.social-media{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:16px;
+}
+
+.social-icon{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 12px;
+  border-radius:50px;
+  font-weight:700;
+  text-decoration:none;
+  color:#fff;
+  transition:0.3s;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+.social-icon:hover{
+  transform:translateY(-3px) scale(1.05);
+}
+
+.social-icon.instagram{background:#E1306C;}
+.social-icon.tiktok{background:#010101;}
+.social-icon.youtube{background:#FF0000;}
+
+/* ========== Hero Visual Buku 3D ========== */
+.hero-visual{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.book-wrap{
+  width:280px;
+  height:380px;
+  transform-style:preserve-3d;
+  cursor:grab;
+  position:relative;
+  z-index:1;
+}
+
+.book{
+  position:absolute;
+  inset:0;
+  border-radius:12px;
+  overflow:hidden;
+  padding:18px;
+  background:linear-gradient(180deg,#0b0f14,#0a0e12);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(255,255,255,0.05);
+  box-shadow:0 30px 80px rgba(2,6,23,0.6);
+}
+
+.book img{
+  width:86%;
+  height:86%;
+  border-radius:8px;
+  object-fit:cover;
+}
+
+/* =====================================
+   SECTION / CARD
+===================================== */
+.section{
+  max-width:var(--maxW);
+  margin:40px auto;
+  padding:20px;
+}
+
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:14px;
+  transition:.3s;
+  box-shadow:0 18px 50px rgba(2,6,23,0.5);
+}
+
+.card:hover{
+  transform:translateY(-5px) scale(1.02);
+  box-shadow:0 20px 60px rgba(34,197,94,0.3);
+}
+
+/* =====================================
+   GALERI
+===================================== */
+.grid-gallery{
+  display:grid;
+  gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+}
+
+.grid-gallery img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:12px;
+  cursor:zoom-in;
+  transition:0.3s;
+}
+
+.grid-gallery img:hover{
+  transform:scale(1.05);
+  box-shadow:0 12px 40px rgba(34,197,94,0.4);
+}
+
+/* =====================================
+   LIGHTBOX
+===================================== */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:300;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:86%;
+  border-radius:12px;
+}
+
+/* =====================================
+   KONTAK
+===================================== */
+.contact-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.contact-grid .card{
+  flex:1;
+  min-width:240px;
+}
+
+.map-card iframe{
+  width:100%;
+  height:260px;
+  border:0;
+}
+
+.contact-grid input,
+.contact-grid textarea{
+  padding:10px;
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:8px;
+  color:#fff;
+}
+
+.contact-grid button{
+  padding:10px;
+  background:linear-gradient(90deg,var(--accent),#16a34a);
+  color:#062018;
+  font-weight:800;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+footer{
+  text-align:center;
+  color:var(--muted);
+  padding:18px;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:980px){
+  .header{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero-card{order:2;}
+  .hero-visual{order:1; margin-bottom:20px;}
+}
+
+@media(max-width:480px){
+  .social-icon span{display:none;}
+  .hero-title{font-size:22px;}
+  .hero-sub{font-size:14px;}
+  .book-wrap{
+    width:220px;
+    height:300px;
+  }
+}
+
+/* =====================================
+   ANIMATION
+===================================== */
+@keyframes fadeIn{
+  from {opacity:0; transform:translateY(-10px);}
+  to   {opacity:1; transform:translateY(0);}
+}
